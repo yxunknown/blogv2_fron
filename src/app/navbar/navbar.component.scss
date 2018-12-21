@@ -1,0 +1,124 @@
+.nav {
+  height: 70px;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(26, 26, 26, 0.1);
+  text-align: center;
+}
+
+.title {
+  font-family: sans-serif;
+  line-height: 70px;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 70px;
+}
+
+.right-btn {
+  height: 25px;
+  width: 25px;
+  font-size: 25px;
+  position: relative;
+  max-height: 100%;
+  max-width: 100%;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+
+
+.btn:hover {
+  color: cornflowerblue;
+  cursor: pointer;
+}
+.left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 70px;
+}
+.left-btn {
+  height: 25px;
+  width: 25px;
+  font-size: 25px;
+  position: relative;
+  max-height: 100%;
+  max-width: 100%;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}
+
+.navbar {
+  height: 70px;
+  position: absolute;
+  top: 0;
+  right: 50px;
+}
+.navs {
+  height: 30px;
+  position: relative;
+  max-height: 100%;
+  max-width: 100%;
+  top: 20px;
+  right: 20px;
+  transform: translateY(-50%);
+  list-style: none;
+}
+.nav-item {
+  float: right;
+  height: 30px;
+  line-height: 30px;
+  display: block;
+  width: 50px;
+  font-family: sans-serif;
+  text-align: center;
+  padding-top: 2px;
+}
+.nav-icon {
+  font-size: 20px;
+}
+
+.foot {
+  height: 60px;
+  position: fixed;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 1px 3px rgba(26, 26, 26, 0.1);
+  width: 100%;
+  display: none;
+}
+.foot-navs {
+  width: 100%;
+  list-style: none;
+  height: 60px;
+  padding: 0;
+  display: flex;
+}
+.f-nav-item {
+  float: right;
+  flex: 1;
+}
+.f-nav-text {
+  font-size: 12px;
+  font-family: sans-serif;
+}
+@media only screen and (max-width: 560px) {
+  .title {
+    position: absolute;
+    left: 60px;
+    font-weight: normal;
+  }
+  .navbar {
+    display: none;
+  }
+  .foot {
+    display: block;
+  }
+}

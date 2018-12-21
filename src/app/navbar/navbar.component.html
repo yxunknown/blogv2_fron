@@ -1,0 +1,24 @@
+<div class="nav">
+  <div class="title">title</div>
+  <div class="right" *ngIf="rightBtn" (click)="login()">
+    <i class="fas fa-qrcode right-btn btn"></i>
+  </div>
+  <div class="navbar">
+    <ul class="navs">
+      <li class="nav-item btn"><i class="nav-icon fas fa-blog"></i></li>
+      <li class="nav-item btn"><i class="nav-icon fas fa-hourglass-end"></i></li>
+    </ul>
+  </div>
+  <div class="left" *ngIf="leftBtn">
+    <i class="fas fa-chevron-left left-btn btn"></i>
+  </div>
+
+  <div class="foot">
+    <ul class="foot-navs">
+      <li class="f-nav-item btn"><i class="nav-icon fas fa-hourglass-end"></i><div class="f-nav-text">Times</div></li>
+      <li class="f-nav-item btn"><i class="nav-icon fas fa-blog"></i><div class="f-nav-text">Articles</div> </li>
+      <li class="f-nav-item btn"><i class="nav-icon fas fa-ghost"></i><div class="f-nav-text">Evils</div></li>
+      <li class="f-nav-item btn"><i class="nav-icon fas fa-moon"></i><div class="f-nav-text">Dreams</div></li>
+    </ul>
+  </div>
+</div>

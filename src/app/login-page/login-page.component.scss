@@ -1,0 +1,103 @@
+
+.login {
+  width: 30%;
+  margin: auto;
+  height: 400px;
+  min-width: 400px;
+  position: relative;
+  max-height: 100%;
+  max-width: 100%;
+  top: 30%;
+  text-align: center;
+  transform: translateY(-30%);
+}
+
+.login-header {
+  height: 150px;
+  text-align: center;
+  margin: auto;
+  max-width: 100%;
+  font-family: sans-serif;
+}
+.logo {
+  width: 150px;
+  height: 150px;
+}
+
+.logo-text {
+  line-height: 150px;
+  font-size: 40px;
+  color: white;
+  float: right;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #DC3544;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.input-form {
+  width: 80%;
+  height: 200px;
+  margin-left: 10%;
+}
+
+.input-item {
+  width: 90%;
+  margin-left: 5%;
+  font-family: sans-serif;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.input-tip {
+  width: 100%;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.52);
+  display: block;
+}
+
+.input {
+  width: 100%;
+  margin-top: 5px;
+  height: 25px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  border-bottom: 1px solid rgba(108, 117, 125, 0.72);
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+.input:focus {
+  outline: none;
+  border-bottom: 2px solid #007BFF;
+}
+
+.error-msg {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  font-size: 14px;
+  text-align: left;
+  color: red;
+}
+.btn-group {
+  margin-top: 20px;
+}
+.login-btn {
+  width: 80%;
+}
+@media only screen and (max-width: 560px) {
+  .logo-text {
+    font-size: 30px;
+  }
+  .login {
+    width: 100%;
+    min-width: 320px;
+  }
+  .input-form {
+    width: 94%;
+    margin-left: 3%;
+  }
+}
