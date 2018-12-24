@@ -1,0 +1,11 @@
+.type-item {
+  height: 200px;
+}
+
+@media only screen and (max-width: 560px) {
+  .type-item {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+}

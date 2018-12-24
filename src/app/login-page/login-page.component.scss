@@ -82,11 +82,21 @@
   text-align: left;
   color: red;
 }
-.btn-group {
+.btn-container {
   margin-top: 20px;
+  text-align: left;
 }
-.login-btn {
-  width: 80%;
+.close-btn {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  font-size: 25px;
+  top: 30px;
+  left: 30px;
+  color: #212121;
+}
+.close-btn:hover {
+  color: #007BFF;
 }
 @media only screen and (max-width: 560px) {
   .logo-text {

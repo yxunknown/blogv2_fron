@@ -1,0 +1,38 @@
+.list-container {
+}
+.p-date-group {
+  width: 90%;
+  margin-left: 5%;
+  line-height: 40px;
+}
+.p-date {
+  font-size: medium;
+  font-weight: bolder;
+  float: left;
+  width: 100px;
+}
+.p-lists {
+  float: left;
+  display: block;
+  width: calc(100% - 100px);
+}
+.p-item {
+  height: 40px;
+  padding-left: 10px;
+  line-height: 40px;
+  margin-top: 5px;
+}
+.p-item:first-child {
+  margin-top: 0;
+}
+@media only screen and (max-width: 560px){
+  .p-lists {
+    width: 100%;
+  }
+  .p-item {
+    padding-left: 0;
+  }
+  .p-date:before {
+    content: '';
+  }
+}

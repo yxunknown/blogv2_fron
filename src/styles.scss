@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "~@fortawesome/fontawesome-free/css/all.min.css";
 @import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
 body {
   padding: 0;
   margin: 0;
@@ -12,8 +12,9 @@ body {
   position: absolute;
   background-color: #fdfdfd;
   margin: 0;
-  padding: 0;
-  overflow: hidden;
+  padding: 0 0 65px 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 .card {
   background: #FFFFFF;
@@ -21,4 +22,41 @@ body {
   border-radius: 2px;
   box-shadow: 0 1px 3px rgba(26, 26, 26, 0.3);
   box-sizing: border-box;
+}
+
+@font-face {
+  font-family: pixel;
+  src: url("/assets/fonts/pixel.ttf");
+}
+
+@font-face {
+  font-family: barcode;
+  src: url("/assets/fonts/barcode.TTF");
+}
+
+::selection {
+  background: salmon;
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  border-radius: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: rgba(230, 230, 230, 0.4);
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #00BFFF;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #1E90FF;
 }

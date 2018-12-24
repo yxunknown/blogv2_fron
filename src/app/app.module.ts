@@ -8,9 +8,13 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LifeTimeComponent } from './life-time/life-time.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import {RouterModule} from '@angular/router';
+import { TimeProgressComponent } from './time-progress/time-progress.component';
+import { ArticleListComponent } from './article-list/article-list.component';
+import { TypeCollectionsComponent } from './type-collections/type-collections.component';
 
 const route = [
-  {path: 'login', component: LoginPageComponent}
+  {path: 'login', component: LoginPageComponent},
+  {path: 'home', component: HomePageComponent}
 ];
 @NgModule({
   declarations: [
@@ -18,7 +22,10 @@ const route = [
     HomePageComponent,
     NavbarComponent,
     LifeTimeComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    TimeProgressComponent,
+    ArticleListComponent,
+    TypeCollectionsComponent
   ],
   imports: [
     BrowserModule,

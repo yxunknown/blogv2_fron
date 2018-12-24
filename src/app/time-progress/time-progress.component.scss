@@ -1,0 +1,42 @@
+.p-container {
+  width: 70%;
+  margin-left: 15%;
+}
+
+.p-bg {
+  height: 4px;
+  width: 100%;
+  background-color: #a5a5a5;
+
+}
+.p-value {
+  height: 4px;
+  background-color: #000;
+  width: 23%;
+}
+.date-container {
+  width: 100%;
+  text-align: center;
+  font-family: pixel;
+}
+.year {
+  font-size: 40px;
+}
+.date {
+  margin-top: -15px;
+  font-weight: bolder;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.p-info {
+  width: 100%;
+  text-align: center;
+  font-family: barcode;
+  font-size: 40px;
+}
+@media only screen and (max-width: 560px) {
+  .p-container {
+    width: 90%;
+    margin-left: 5%;
+  }
+}
