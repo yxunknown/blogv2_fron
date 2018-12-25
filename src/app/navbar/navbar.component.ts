@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import {NavEventService} from '../services/nav-event.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,9 +12,11 @@ export class NavbarComponent implements OnInit {
   @Input() leftBtn = false;
   @Input() rightBtn = false;
 
+  currentItem = 0;
+
   constructor(
-    private router: Router
-  ) { }
+    private router: Router,
+    private navEvent: NavEventService) { }
 
   ngOnInit() {
   }
@@ -24,5 +27,13 @@ export class NavbarComponent implements OnInit {
     // alert(url);
     // window.location.href = url;
     this.router.navigate(['login']);
+  }
+
+  itemClicked(parent, index: number) {
+    // don't handle clicking on same item
+    if (index !== this.currentItem) {
+      this.currentItem = index;
+      this.navEvent.itemClick(index);
+    }
   }
 }

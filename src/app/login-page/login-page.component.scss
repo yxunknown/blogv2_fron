@@ -13,25 +13,22 @@
 }
 
 .login-header {
-  height: 150px;
-  text-align: center;
-  margin: auto;
-  max-width: 100%;
-  font-family: sans-serif;
+  height: 100px;
 }
 .logo {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
+  float: left;
 }
 
 .logo-text {
-  line-height: 150px;
+  line-height: 100px;
   font-size: 40px;
   color: white;
   float: right;
   padding-left: 20px;
   padding-right: 20px;
-  background-color: #DC3544;
+  background-color: #d1675d;
   font-weight: bold;
   font-family: sans-serif;
 }
@@ -60,7 +57,7 @@
 .input {
   width: 100%;
   margin-top: 5px;
-  height: 25px;
+  height: 30px;
   border: none;
   outline: none;
   font-size: 18px;

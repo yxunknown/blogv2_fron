@@ -11,10 +11,13 @@ import {RouterModule} from '@angular/router';
 import { TimeProgressComponent } from './time-progress/time-progress.component';
 import { ArticleListComponent } from './article-list/article-list.component';
 import { TypeCollectionsComponent } from './type-collections/type-collections.component';
+import {NavEventService} from './services/nav-event.service';
+import { GithubAuthPageComponent } from './github-auth-page/github-auth-page.component';
 
 const route = [
   {path: 'login', component: LoginPageComponent},
-  {path: 'home', component: HomePageComponent}
+  {path: 'home', component: HomePageComponent},
+  {path: 'login/code', component: GithubAuthPageComponent}
 ];
 @NgModule({
   declarations: [
@@ -25,14 +28,15 @@ const route = [
     LoginPageComponent,
     TimeProgressComponent,
     ArticleListComponent,
-    TypeCollectionsComponent
+    TypeCollectionsComponent,
+    GithubAuthPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(route)
   ],
-  providers: [],
+  providers: [NavEventService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

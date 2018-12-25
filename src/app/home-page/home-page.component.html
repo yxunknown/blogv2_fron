@@ -1,11 +1,9 @@
 <div class="full-container">
-  <app-navbar [rightBtn]="true" [leftBtn]="true"></app-navbar>
+  <app-navbar [rightBtn]="true" [leftBtn]="false"></app-navbar>
   <div class="container content-container">
-    <div class="time-progress">
-      <!--<app-time-progress></app-time-progress>-->
-      <!--<app-article-list></app-article-list>-->
-      <app-type-collections></app-type-collections>
-    </div>
+    <app-time-progress *ngIf="currentTap === 0"></app-time-progress>
+    <app-article-list *ngIf="currentTap === 1"></app-article-list>
+    <app-type-collections *ngIf="currentTap == 2"></app-type-collections>
   </div>
 </div>
 

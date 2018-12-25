@@ -1,11 +1,18 @@
 .type-item {
   height: 200px;
+  width: 30%;
+  margin-left: 2.5%;
+  margin-top: 20px;
+  text-align: center;
+  padding: 50px 20px;
+  font-family: "Times New Roman", sans-serif;
+  font-size: 30px;
 }
 
 @media only screen and (max-width: 560px) {
   .type-item {
     width: 90%;
     margin-left: 5%;
+    margin-top: 10px;
   }
-
 }
