@@ -13,11 +13,14 @@ import { ArticleListComponent } from './article-list/article-list.component';
 import { TypeCollectionsComponent } from './type-collections/type-collections.component';
 import {NavEventService} from './services/nav-event.service';
 import { GithubAuthPageComponent } from './github-auth-page/github-auth-page.component';
+import { RegisterPageComponent } from './register-page/register-page.component';
+import { EvilsComponent } from './evils/evils.component';
 
 const route = [
   {path: 'login', component: LoginPageComponent},
   {path: 'home', component: HomePageComponent},
-  {path: 'login/code', component: GithubAuthPageComponent}
+  {path: 'login/code', component: GithubAuthPageComponent},
+  {path: 'register', component: RegisterPageComponent}
 ];
 @NgModule({
   declarations: [
@@ -29,7 +32,9 @@ const route = [
     TimeProgressComponent,
     ArticleListComponent,
     TypeCollectionsComponent,
-    GithubAuthPageComponent
+    GithubAuthPageComponent,
+    RegisterPageComponent,
+    EvilsComponent
   ],
   imports: [
     BrowserModule,

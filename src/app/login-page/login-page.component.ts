@@ -24,4 +24,8 @@ export class LoginPageComponent implements OnInit {
   back() {
     this.router.navigate(['/home']);
   }
+
+  register() {
+    this.router.navigate(['/register']);
+  }
 }

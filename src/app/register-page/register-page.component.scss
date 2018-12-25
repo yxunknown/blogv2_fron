@@ -1,0 +1,41 @@
+.re-container {
+  width: 50%;
+  left: 25%;
+  position: relative;
+  margin-top: 20%;
+}
+.re-header {
+  height: 100px;
+}
+.logo-img {
+  height: 100px;
+  width: 100px;
+  float: left;
+}
+.logo-text {
+  height: 100px;
+  line-height: 100px;
+  padding: 0 10px;
+  background-color: #d1675d;
+  color: white;
+  font-size: 30px;
+  float: right;
+}
+.close-btn {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  font-size: 25px;
+  top: 30px;
+  left: 30px;
+  color: #212121;
+}
+.close-btn:hover {
+  color: #007BFF;
+}
+@media only screen and (max-width: 560px){
+  .re-container {
+    width: 98%;
+    left: 1%;
+  }
+}

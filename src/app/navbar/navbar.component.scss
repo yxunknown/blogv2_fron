@@ -18,7 +18,13 @@
   top: 0;
   height: 70px;
 }
-
+.login-info {
+  position: absolute;
+  line-height: 70px;
+  right: 65px;
+  top: 0;
+  height: 70px;
+}
 .right-btn {
   height: 25px;
   width: 25px;
@@ -71,7 +77,7 @@
 .nav-right {
   position: absolute;
   right: 20px;
-  margin-top: 20px;
+  margin-top: 5px;
 }
 .right-navs {
   list-style: none;
