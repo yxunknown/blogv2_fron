@@ -13,6 +13,9 @@ import { ArticleListComponent } from './article-list/article-list.component';
 import { TypeCollectionsComponent } from './type-collections/type-collections.component';
 import {NavEventService} from './services/nav-event.service';
 import { GithubAuthPageComponent } from './github-auth-page/github-auth-page.component';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
+import { ToastComponent } from './toast/toast.component';
 
 const route = [
   {path: 'login', component: LoginPageComponent},
@@ -29,12 +32,15 @@ const route = [
     TimeProgressComponent,
     ArticleListComponent,
     TypeCollectionsComponent,
-    GithubAuthPageComponent
+    GithubAuthPageComponent,
+    ToastComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(route)
+    RouterModule.forRoot(route),
+    HttpClientModule,
+    FormsModule
   ],
   providers: [NavEventService],
   bootstrap: [AppComponent]
