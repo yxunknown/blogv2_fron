@@ -6,18 +6,18 @@
     </div>
     <div class="input-form">
       <div class="input-item">
-        <small class="input-tip">Email</small>
-        <input class="input" type="email" placeholder="email">
-        <label class="error-msg">输入有误</label>
+          <small class="input-tip">Email</small>
+          <input [(ngModel)]="user.email" class="input" type="email" placeholder="email">
+          <label class="error-msg">输入有误</label>
       </div>
       <div class="input-item">
-        <small class="input-tip">Password</small>
-        <input class="input" type="password" placeholder="password">
-        <label class="error-msg">输入有误</label>
+          <small class="input-tip">Password</small>
+          <input [(ngModel)]="user.password" class="input" type="password" placeholder="password">
+          <label class="error-msg">输入有误</label>
       </div>
 
       <div class="btn-container">
-        <button type="button" class="btn btn-primary btn-sm btn-block">登 录</button>
+        <button type="button" (click)="login()" class="btn btn-primary btn-sm btn-block">登 录</button>
 
       </div>
       <div class="btn-container">

@@ -13,14 +13,14 @@ import { ArticleListComponent } from './article-list/article-list.component';
 import { TypeCollectionsComponent } from './type-collections/type-collections.component';
 import {NavEventService} from './services/nav-event.service';
 import { GithubAuthPageComponent } from './github-auth-page/github-auth-page.component';
-import { RegisterPageComponent } from './register-page/register-page.component';
-import { EvilsComponent } from './evils/evils.component';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
+import { ToastComponent } from './toast/toast.component';
 
 const route = [
   {path: 'login', component: LoginPageComponent},
   {path: 'home', component: HomePageComponent},
-  {path: 'login/code', component: GithubAuthPageComponent},
-  {path: 'register', component: RegisterPageComponent}
+  {path: 'login/code', component: GithubAuthPageComponent}
 ];
 @NgModule({
   declarations: [
@@ -33,13 +33,14 @@ const route = [
     ArticleListComponent,
     TypeCollectionsComponent,
     GithubAuthPageComponent,
-    RegisterPageComponent,
-    EvilsComponent
+    ToastComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(route)
+    RouterModule.forRoot(route),
+    HttpClientModule,
+    FormsModule
   ],
   providers: [NavEventService],
   bootstrap: [AppComponent]
