@@ -1,8 +1,8 @@
-<div class="toast card">
-  <div class="toast-header">
-    Toast
-    <div class="close-btn">
-      <i class="fas fa-times"></i>
-    </div>
+<div class="toast-container" #toastContainer>
+  <div *ngFor="let toast of toasts; let i = index"
+       class="alert alert-{{toast.type}} m-toast animated fadeInUp" role="alert">
+    <div class="close-btn" (click)="deleteToastFromStorage(toast)"><i class="fas fa-times"></i></div>
+    <strong class="toast-title">{{toast.title}}</strong>{{toast.msg}}
+    <small class="toast-date text-muted">{{toast.date}}</small>
   </div>
 </div>

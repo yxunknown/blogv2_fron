@@ -2,7 +2,7 @@
   width: 50%;
   left: 25%;
   position: relative;
-  margin-top: 20%;
+  margin-top: 15%;
 }
 .re-header {
   height: 100px;
@@ -26,16 +26,37 @@
   width: 25px;
   height: 25px;
   font-size: 25px;
-  top: 30px;
+  top: 20px;
   left: 30px;
   color: #212121;
 }
 .close-btn:hover {
   color: #007BFF;
 }
+label {
+  font-size: 12px;
+  margin-bottom: 0;
+}
+small {
+  font-size: 12px;
+}
+input {
+  margin-top: 2px!important;
+}
 @media only screen and (max-width: 560px){
   .re-container {
     width: 98%;
     left: 1%;
+  }
+  .re-header {
+    height: 60px;
+  }
+  .logo-img {
+    height: 60px;
+    width: 60px;
+  }
+  .logo-text {
+    height: 60px;
+    line-height: 60px;
   }
 }

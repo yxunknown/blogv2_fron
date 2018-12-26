@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {NavEventService} from '../services/nav-event.service';
+import {StorageService} from '../services/storage.service';
 
 @Component({
   selector: 'app-navbar',
@@ -14,18 +15,23 @@ export class NavbarComponent implements OnInit {
 
   currentItem = 0;
 
+  username = '';
+
   constructor(
     private router: Router,
-    private navEvent: NavEventService) { }
+    private navEvent: NavEventService,
+    private storage: StorageService) { }
 
   ngOnInit() {
+    const user = this.storage.getUser();
+    if (user !== null) {
+      this.username = user.email;
+    } else {
+      this.username = '未登录';
+    }
   }
 
   login() {
-    // const clientid = 'fac48429e3d3e35aaec2';
-    // const url = `https://github.com/login/oauth/authorize?client_id=${clientid}&scope=user:email`;
-    // alert(url);
-    // window.location.href = url;
     this.router.navigate(['login']);
   }
 

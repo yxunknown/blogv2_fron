@@ -1,0 +1,25 @@
+.user-info-container {
+  background-color: #d1675d;
+  height: 200px;
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 10%;
+}
+
+.avatar-info {
+  width: 200px;
+  height: 300px;
+  float: right;
+  background-color: black;
+}
+
+.base-info {
+  width: calc(100% - 210px);
+  float: left;
+  background-color: #007BFF;
+  height: 300px;
+}
+.avatar-img {
+  width: 200px;
+
+}

@@ -16,11 +16,16 @@ import { GithubAuthPageComponent } from './github-auth-page/github-auth-page.com
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { ToastComponent } from './toast/toast.component';
+import {EvilsComponent} from './evils/evils.component';
+import {RegisterPageComponent} from './register-page/register-page.component';
+import { UserinfoComponent } from './userinfo/userinfo.component';
 
 const route = [
   {path: 'login', component: LoginPageComponent},
   {path: 'home', component: HomePageComponent},
-  {path: 'login/code', component: GithubAuthPageComponent}
+  {path: 'register', component: RegisterPageComponent},
+  {path: 'login/code', component: GithubAuthPageComponent},
+  {path: 'user', component: UserinfoComponent}
 ];
 @NgModule({
   declarations: [
@@ -33,7 +38,10 @@ const route = [
     ArticleListComponent,
     TypeCollectionsComponent,
     GithubAuthPageComponent,
-    ToastComponent
+    ToastComponent,
+    EvilsComponent,
+    RegisterPageComponent,
+    UserinfoComponent
   ],
   imports: [
     BrowserModule,

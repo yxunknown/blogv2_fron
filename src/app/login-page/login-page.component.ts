@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {HttpService} from '../services/http.service';
+import {ToastService} from '../services/toast.service';
+import Nprogress from 'nprogress';
+import {StorageService} from '../services/storage.service';
 
 @Component({
   selector: 'app-login-page',
@@ -13,10 +16,11 @@ export class LoginPageComponent implements OnInit {
     email: '',
     password: ''
   };
-
   constructor(
     private router: Router,
-    private http: HttpService
+    private http: HttpService,
+    private toast: ToastService,
+    private storage: StorageService
   ) {
   }
 
@@ -30,19 +34,53 @@ export class LoginPageComponent implements OnInit {
   }
 
   login() {
-    if (this.username === '') {
-      alert('用户名为空');
+    if (this.user.email === '') {
+      this.toast.toast({
+        type: 'warning',
+        title: '提示',
+        msg: '邮箱为空',
+        duration: 2000,
+        date: ''
+      });
       return false;
     }
-    if (this.password === '') {
-      alert('密码为空');
+    if (this.user.password === '') {
+      this.toast.toast({
+        type: 'warning',
+        title: '提示',
+        msg: '密码为空',
+        duration: 2000,
+        date: ''
+      });
       return false;
     }
-    console.log(this.user);
     this.http.login(this.user, {
-      onPre: () => {},
+      onPre: () => {
+        Nprogress.start();
+      },
       onPost: ((value, err) => {
-        console.log(value, err);
+        Nprogress.done();
+        if (value !== undefined && value.code === 200) {
+          this.toast.toast({
+            type: 'success',
+            title: '提示',
+            msg: `登录成功，正在为你跳转到主页。请稍候...`,
+            duration: 2000,
+            date: ''
+          });
+          this.storage.storeUser(value.data.user);
+          setTimeout(() => {
+            this.router.navigate(['/home']);
+          }, 2000);
+        } else {
+          this.toast.toast({
+            type: 'danger',
+            title: '错误',
+            msg: `登录失败，${value.info}`,
+            duration: 2000,
+            date: ''
+          });
+        }
       })
     });
   }

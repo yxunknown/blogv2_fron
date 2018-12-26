@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
-import {Subject} from 'rxjs';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ApiService} from './api.service';
 
 interface HttpHandler {
   onPre();
+
   onPost(value, err);
 }
 
@@ -13,8 +13,6 @@ interface HttpHandler {
 })
 export class HttpService {
 
-  private subject = new Subject<any>();
-
   constructor(
     private http: HttpClient,
     private api: ApiService) {
@@ -22,7 +20,10 @@ export class HttpService {
 
   login(user, handler: HttpHandler) {
     handler.onPre();
-    this.http.post(this.api.login(), user)
+    const body = new FormData();
+    body.set('email', user.email);
+    body.set('password', user.password);
+    this.http.post(this.api.login(), body)
       .subscribe({
         next: value => handler.onPost(value, undefined),
         error: err => handler.onPost(undefined, err)
@@ -31,7 +32,12 @@ export class HttpService {
 
   register(user, handler: HttpHandler) {
     handler.onPre();
-    this.http.post(this.api.register(), user)
+    const body = new FormData();
+    body.set('email', user.email);
+    body.set('password', user.password);
+    body.set('nickname', user.nickname);
+    body.set('profile', 'null');
+    this.http.post(this.api.register(), body)
       .subscribe({
         next: value => handler.onPost(value, undefined),
         error: err => handler.onPost(undefined, err)

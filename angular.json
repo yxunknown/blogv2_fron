@@ -30,9 +30,17 @@
               "src/styles.scss",
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/hover.css/css/hover-min.css"
+              "node_modules/hover.css/css/hover-min.css",
+              "node_modules/animate.css/animate.min.css",
+              "node_modules/nprogress/nprogress.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/popper.js/dist/popper.min.js",
+              "node_modules/tooltip.js/dist/tooltip.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/nprogress/nprogress.js"
+            ]
           },
           "configurations": {
             "production": {

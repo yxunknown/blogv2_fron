@@ -5,27 +5,33 @@
         <img src="../../assets/images/cat.svg" class="logo-img">
         <div class="logo-text">注册</div>
       </div>
-      <form style="margin-top: 20px">
+      <div style="margin-top: 20px">
         <div class="form-group">
           <label for="exampleInputEmail1">邮箱</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                 placeholder="输入邮箱地址">
+          <input type="email" class="form-control" id="exampleInputEmail1" [(ngModel)]="user.email"
+                 aria-describedby="emailHelp" placeholder="输入邮箱地址">
           <small id="emailHelp" class="form-text text-muted">邮箱地址示例: xxx@gmail.com</small>
         </div>
         <div class="form-group">
+          <label for="exampleInputName1">用户名</label>
+          <input type="email" class="form-control" id="exampleInputName1" [(ngModel)]="user.nickname"
+                 aria-describedby="nameHelp" placeholder="输入用户名">
+          <small id="nameHelp" class="form-text text-muted">想一个别有❤️意的用户名吧~</small>
+        </div>
+        <div class="form-group">
           <label for="exampleInputPassword1">密码</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="输入密码"
-                 aria-describedby="password1Help">
+          <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="user.password"
+                 placeholder="输入密码" aria-describedby="password1Help">
           <small id="password1Help" class="form-text text-muted">密码为8到16位</small>
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">确认密码</label>
-          <input type="password" class="form-control" id="exampleInputPassword2" placeholder="输入确认密码"
-                 aria-describedby="password2Help">
+          <input type="password" class="form-control" id="exampleInputPassword2" [(ngModel)]="user.commitPassword"
+                 placeholder="输入确认密码" aria-describedby="password2Help">
           <small id="password2Help" class="form-text text-muted">确认密码与密码需一致</small>
         </div>
-        <button type="button" class="btn btn-primary btn-block">注册</button>
-      </form>
+        <button type="button" class="btn btn-primary btn-block" (click)="register()">注册</button>
+      </div>
     </div>
   </div>
   <div class="close-btn" (click)="back()">
