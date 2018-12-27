@@ -1,0 +1,15 @@
+<div class="full-container scrollable">
+  <div class="container">
+    <div class="article-header">
+      <div class="article-info">
+        <div class="article-title">{{article.title}}</div>
+        <div class="article-type">{{article.createDate}}
+          <span class="font-italic font-weight-bold">{{article.type.type}}</span></div>
+      </div>
+    </div>
+    <div class="article-wrapper" #articleContainer></div>
+  </div>
+  <div class="close-btn" (click)="back()">
+    <i class="fas fa-times"></i>
+  </div>
+</div>

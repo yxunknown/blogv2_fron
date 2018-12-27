@@ -25,7 +25,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
     const user = this.storage.getUser();
     if (user !== null) {
-      this.username = user.email;
+      this.username = user.nickname;
     } else {
       this.username = '未登录';
     }
@@ -41,5 +41,12 @@ export class NavbarComponent implements OnInit {
       this.currentItem = index;
       this.navEvent.itemClick(index);
     }
+  }
+
+  showInfo() {
+    if (this.username !== '未登录') {
+      this.router.navigate(['/user']);
+    }
+    return false;
   }
 }

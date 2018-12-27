@@ -1,0 +1,11 @@
+.type-info {
+  height: 150px;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+.type-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: scale-down;
+}

@@ -44,4 +44,22 @@ export class HttpService {
       });
   }
 
+  getArticles(pagination, handler: HttpHandler) {
+    handler.onPre();
+    this.http.get(this.api.getArticles(), {params: pagination})
+      .subscribe({
+        next: value => handler.onPost(value, undefined),
+        error: err => handler.onPost(undefined, err)
+      });
+  }
+
+  getTypes(handler: HttpHandler) {
+    handler.onPre();
+    this.http.get(this.api.getTypes())
+      .subscribe({
+        next: value => handler.onPost(value, undefined),
+        error: err => handler.onPost(undefined, err)
+      });
+  }
+
 }

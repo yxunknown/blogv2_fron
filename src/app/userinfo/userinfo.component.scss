@@ -1,6 +1,4 @@
 .user-info-container {
-  background-color: #d1675d;
-  height: 200px;
   width: 70%;
   margin-left: 15%;
   margin-top: 10%;
@@ -8,18 +6,70 @@
 
 .avatar-info {
   width: 200px;
-  height: 300px;
   float: right;
-  background-color: black;
 }
 
 .base-info {
-  width: calc(100% - 210px);
+  width: calc(100% - 220px);
   float: left;
-  background-color: #007BFF;
-  height: 300px;
 }
 .avatar-img {
   width: 200px;
+  box-shadow: 0 1px 3px rgba(26, 26, 26, 0.1);
+  border-radius: 2px;
+}
 
+.user-name {
+  font-size: 40px;
+  font-weight: bold;
+}
+.email {
+  font-size: 16px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.close-btn {
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  position: absolute;
+  color: white;
+  text-shadow: 0 1px 3px rgba(21, 21, 21, 0.3);
+  font-size: 25px;
+  left: 20px;
+  top: 20px;
+}
+.close-btn:hover {
+  color: #1E90FF;
+}
+@media only screen and (max-width: 560px) {
+
+  .avatar-info {
+    width: 100%;
+    float: left;
+    margin: 0;
+  }
+  .avatar-img {
+    width: 100%;
+  }
+  .user-info-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .u-container {
+    padding: 0;
+  }
+
+  .base-info {
+    width: 100%;
+    float: left;
+    margin: 20px 0 0 0;
+    padding: 0 20px;
+  }
+
+  .outer-container {
+    overflow-y: scroll;
+  }
 }

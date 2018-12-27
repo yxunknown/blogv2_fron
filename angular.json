@@ -39,7 +39,9 @@
               "node_modules/popper.js/dist/popper.min.js",
               "node_modules/tooltip.js/dist/tooltip.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "node_modules/nprogress/nprogress.js"
+              "node_modules/nprogress/nprogress.js",
+              "node_modules/marked/lib/marked.js",
+              "node_modules/rgbaster/rgbaster.min.js"
             ]
           },
           "configurations": {

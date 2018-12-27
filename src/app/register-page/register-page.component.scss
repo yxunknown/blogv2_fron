@@ -59,4 +59,7 @@ input {
     height: 60px;
     line-height: 60px;
   }
+  .outer-container {
+    overflow-y: scroll;
+  }
 }

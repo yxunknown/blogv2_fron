@@ -1,10 +1,52 @@
-<div class="full-container">
-  <div class="container">
+<div class="full-container outer-container">
+  <div class="container u-container">
     <div class="user-info-container">
       <div class="avatar-info">
-        <img src="http://photos.wikimapia.org/p/00/01/38/27/74_big.jpg" class="avatar-img">
+        <img src="{{user.profile}}" class="avatar-img" (click)="fileChoser.click()">
+        <input id="profileInput" type="file" style="display: none" #fileChoser (change)="profileChange(fileChoser)">
       </div>
-      <div class="base-info"></div>
+      <div class="base-info">
+        <div>
+          <small class="text-muted">基本信息</small>
+          <div class="name">
+            <div class="user-name">{{user.nickname}}</div>
+            <div class="email"><i class="fas fa-at"></i>{{user.email}}</div>
+          </div>
+        </div>
+        <div style="margin-top: 30px">
+          <small class="text-muted">密码信息</small>
+          <div class="password" style="margin-top: 20px">
+            <button *ngIf="!showPassword" type="button" class="btn btn-sm btn-light"
+                    style="width: 100px" (click)="changePassword()">修改密码</button>
+
+            <div *ngIf="showPassword">
+              <div class="form-group">
+                <label for="exampleInputPassword1">旧密码</label>
+                <input type="password" class="form-control form-control-sm" id="exampleInputPassword1" [(ngModel)]="user.password"
+                       placeholder="输入密码" aria-describedby="password1Help">
+                <small id="password1Help" class="form-text text-muted">通过Github登录的用户，初始密码为<kbd>githubuser</kbd></small>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword2">新密码</label>
+                <input type="password" class="form-control form-control-sm" id="exampleInputPassword2" [(ngModel)]="user.commitPassword"
+                       placeholder="输入确认密码" aria-describedby="password2Help">
+                <small id="password2Help" class="form-text text-muted">密码为8-16个字符</small>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword2">确认新密码</label>
+                <input type="password" class="form-control form-control-sm" id="exampleInputPassword3" [(ngModel)]="user.commitPassword"
+                       placeholder="输入确认密码" aria-describedby="password3Help">
+                <small id="password3Help" class="form-text text-muted">确认密码与密码需一致</small>
+              </div>
+              <button type="button" class="btn btn-sm btn-primary" style="width: 100px">提交修改</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <div class="close-btn" (click)="back()">
+    <i class="fas fa-times"></i>
   </div>
 </div>

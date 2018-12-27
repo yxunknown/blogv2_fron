@@ -1,11 +1,11 @@
 <div class="n-nav fixed-top">
-  <div class="title">title</div>
+  <div class="title">世界和她的猫</div>
   <div class="right nav-btn" *ngIf="rightBtn" (click)="login()">
     <i class="fas fa-qrcode right-btn"></i>
   </div>
   <div class="login-info">
     <a href="#" class="text-muted" data-toggle="tooltip"
-       data-placement="bottom" title="进入个人中心">{{username}}</a>
+       data-placement="bottom" title="进入个人中心" (click)="showInfo()">{{username}}</a>
   </div>
   <div class="left nav-btn" *ngIf="leftBtn">
     <i class="fas fa-chevron-left left-btn"></i>
