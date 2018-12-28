@@ -16,10 +16,18 @@ export class TypeComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    const img = document.getElementById('type-img');
-    console.log(img);
-    const result = analyze('https://photo-1253210260.cos.ap-chengdu.myqcloud.com/1542072554094.jpg');
-    console.log(result);
+    this.getResult().then(data => {
+      console.log(data);
+    });
+  }
+
+   async getResult() {
+      const result = await this.getS();
+      return result;
+  }
+
+  getS() {
+    return 's';
   }
 
 }
