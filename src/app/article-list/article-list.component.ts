@@ -16,12 +16,14 @@ export class ArticleListComponent implements OnInit, AfterViewInit {
   @Input() selection: any;
 
   articles = [];
+
   constructor(
     private http: HttpService,
     private toast: ToastService,
     private storage: StorageService,
     private router: Router
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
     if (this.articles.length === 0) {
@@ -58,7 +60,7 @@ export class ArticleListComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    console.log("inited");
+    console.log('inited');
   }
 
   renderArticle(articles) {
