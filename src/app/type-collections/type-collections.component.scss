@@ -26,7 +26,13 @@
   display: block;
   margin-top: -200px;
   min-height: 200px;
+}
 
+.type-name:hover {
+
+  text-shadow: none;
+  background-color: rgba(21, 21, 21, 0.4);
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 560px) {
@@ -35,3 +41,4 @@
     margin-left: 5%;
   }
 }
+

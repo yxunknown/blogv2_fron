@@ -3,6 +3,8 @@ import {HttpService} from '../services/http.service';
 import {ToastService} from '../services/toast.service';
 
 import NProgress from 'nprogress';
+import {Router} from '@angular/router';
+import {StorageService} from '../services/storage.service';
 
 @Component({
   selector: 'app-type-collections',
@@ -14,7 +16,9 @@ export class TypeCollectionsComponent implements OnInit {
   types = [];
   constructor(
     private http: HttpService,
-    private toast: ToastService
+    private toast: ToastService,
+    private router: Router,
+    private storage: StorageService
   ) { }
 
   ngOnInit() {
@@ -45,6 +49,11 @@ export class TypeCollectionsComponent implements OnInit {
         }
       }
     });
+  }
+
+  toType(type) {
+    this.storage.setType(type);
+    this.router.navigate(['/type']);
   }
 
 }

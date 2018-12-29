@@ -1,7 +1,7 @@
 <div class="type-container">
   <div class="row flex-row">
     <div *ngFor="let type of types" class="type-item">
-      <div class="type-name">
+      <div class="type-name" (click)="toType(type)">
         {{type.type}}
       </div>
       <img src="http://imgbdb3.bendibao.com/cqbdb/20159/6/20150906143501_67370.jpg" class="type-img">

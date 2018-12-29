@@ -41,7 +41,7 @@
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "node_modules/nprogress/nprogress.js",
               "node_modules/marked/lib/marked.js",
-              "node_modules/rgbaster/rgbaster.min.js"
+              "node_modules/rgbaster.js/rgbaster.min.js"
             ]
           },
           "configurations": {

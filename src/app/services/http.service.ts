@@ -44,9 +44,9 @@ export class HttpService {
       });
   }
 
-  getArticles(pagination, handler: HttpHandler) {
+  getArticles(params, handler: HttpHandler) {
     handler.onPre();
-    this.http.get(this.api.getArticles(), {params: pagination})
+    this.http.get(this.api.getArticles(), {params: params})
       .subscribe({
         next: value => handler.onPost(value, undefined),
         error: err => handler.onPost(undefined, err)

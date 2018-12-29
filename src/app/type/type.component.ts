@@ -1,7 +1,6 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 
-import analyze from 'rgbaster';
-
+// import analyze from '../services/color.service';
 @Component({
   selector: 'app-type',
   templateUrl: './type.component.html',
@@ -9,6 +8,9 @@ import analyze from 'rgbaster';
 })
 export class TypeComponent implements OnInit, AfterViewInit {
 
+  background: string;
+
+  @ViewChild('header') header: ElementRef;
   constructor() {
   }
 
@@ -16,18 +18,8 @@ export class TypeComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.getResult().then(data => {
-      console.log(data);
-    });
-  }
-
-   async getResult() {
-      const result = await this.getS();
-      return result;
-  }
-
-  getS() {
-    return 's';
+    this.background = '../../assets/images/1542072554094.jpg';
+    this.header.nativeElement.style.backgroundImage = `url('${this.background}')`;
   }
 
 }

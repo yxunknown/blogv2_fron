@@ -23,4 +23,12 @@ export class StorageService {
   getArticle() {
     return JSON.parse(window.localStorage.getItem('article'));
   }
+
+  setType(type) {
+    window.localStorage.setItem('type', JSON.stringify(type));
+  }
+
+  getType() {
+    return JSON.parse(window.localStorage.getItem('type'));
+  }
 }

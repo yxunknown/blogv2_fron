@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
 import {HttpService} from '../services/http.service';
 
 import NProgress from 'nprogress';
@@ -12,6 +12,8 @@ import {Router} from '@angular/router';
   styleUrls: ['./article-list.component.scss']
 })
 export class ArticleListComponent implements OnInit, AfterViewInit {
+
+  @Input() selection: any;
 
   articles = [];
   constructor(
