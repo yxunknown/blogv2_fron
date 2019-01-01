@@ -22,6 +22,7 @@ export class LoginPageComponent implements OnInit {
   input: string;
   caches = [];
   tip: string;
+  shellUser = 'login $';
   constructor(
     private router: Router,
     private http: HttpService,
@@ -29,7 +30,7 @@ export class LoginPageComponent implements OnInit {
     private storage: StorageService
   ) {
     this.input = '';
-    this.tip = 'login $';
+    this.tip = 'Please input email:';
   }
 
   ngOnInit() {
@@ -102,6 +103,24 @@ export class LoginPageComponent implements OnInit {
   }
 
   keyDown(event) {
-    console.log(event);
+    if (event.code.toLowerCase() === 'enter') {
+      if (this.input !== '') {
+        if (this.input.toLowerCase() === 'github') {
+          this.caches.push(`${this.shellUser} ${this.tip}${this.input}`);
+          this.caches.push(`rerouting to github, please wait...`);
+          this.tip = '';
+        } else if (this.user.email === '') {
+          this.user.email = this.input;
+          this.caches.push(`${this.shellUser} ${this.tip}${this.input}`);
+          this.tip = 'Please input password:';
+        } else {
+          this.user.password = this.input;
+          this.caches.push(`${this.shellUser} ${this.tip}${this.input}`);
+          this.caches.push('processing, plz wait...');
+          this.tip = '';
+        }
+        this.input = '';
+      }
+    }
   }
 }
