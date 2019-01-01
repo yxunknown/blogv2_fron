@@ -16,12 +16,20 @@ export class LoginPageComponent implements OnInit {
     email: '',
     password: ''
   };
+
+  terminal = true;
+
+  input: string;
+  caches = [];
+  tip: string;
   constructor(
     private router: Router,
     private http: HttpService,
     private toast: ToastService,
     private storage: StorageService
   ) {
+    this.input = '';
+    this.tip = 'login $';
   }
 
   ngOnInit() {
@@ -91,5 +99,9 @@ export class LoginPageComponent implements OnInit {
 
   register() {
     this.router.navigate(['/register']);
+  }
+
+  keyDown(event) {
+    console.log(event);
   }
 }

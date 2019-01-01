@@ -6,4 +6,6 @@
       (click)="toArticle(item)">{{item.title}}</div>
     </div>
   </div>
+  <div style="clear: both"></div>
+  <button type="button" class="btn btn-sm btn-light load-btn" *ngIf="showLoadMore" (click)="getArticles()">加载更多</button>
 </div>

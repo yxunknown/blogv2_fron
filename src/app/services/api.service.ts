@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class ApiService {
 
-  private BASE_URL = 'http://132.232.36.151:9092';
+  private BASE_URL = 'http://192.168.123.125:9092';
 
   constructor() { }
 

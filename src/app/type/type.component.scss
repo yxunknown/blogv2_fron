@@ -16,3 +16,16 @@
 .article-list {
   margin-top: 20px;
 }
+.close-btn {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  font-size: 25px;
+  top: 20px;
+  left: 30px;
+  color: #212121;
+}
+.close-btn:hover {
+  color: #007BFF;
+}
+

@@ -21,6 +21,7 @@ import {RegisterPageComponent} from './register-page/register-page.component';
 import { UserinfoComponent } from './userinfo/userinfo.component';
 import { ArticleComponent } from './article/article.component';
 import { TypeComponent } from './type/type.component';
+import { AdminComponent } from './admin/admin.component';
 
 const route = [
   {path: 'login', component: LoginPageComponent},
@@ -29,7 +30,8 @@ const route = [
   {path: 'login/code', component: GithubAuthPageComponent},
   {path: 'user', component: UserinfoComponent},
   {path: 'article', component: ArticleComponent},
-  {path: 'type', component: TypeComponent}
+  {path: 'type', component: TypeComponent},
+  {path: 'admin', component: AdminComponent}
 ];
 @NgModule({
   declarations: [
@@ -47,7 +49,8 @@ const route = [
     RegisterPageComponent,
     UserinfoComponent,
     ArticleComponent,
-    TypeComponent
+    TypeComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,7 @@
 .list-container {
   margin-top: 20px;
+  width: 100%;
+  text-align: center;
 }
 .p-date-group {
   width: 90%;
@@ -22,6 +24,7 @@
   padding-left: 10px;
   line-height: 40px;
   margin-top: 5px;
+  text-align: left;
 }
 .p-item:first-child {
   margin-top: 0;
@@ -31,6 +34,9 @@
   color: #1E90FF;
   font-weight: bolder;
 }
+.load-btn {
+  margin-top: 20px;
+}
 @media only screen and (max-width: 560px){
   .p-lists {
     width: 100%;
@@ -38,7 +44,7 @@
   .p-item {
     padding-left: 0;
   }
-  .p-date:before {
-    content: '';
+  .p-date {
+    text-align: left;
   }
 }

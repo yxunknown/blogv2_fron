@@ -1,5 +1,5 @@
 <div class="full-container">
-  <div class="login">
+  <div *ngIf="!terminal" class="login">
     <div class="login-header">
       <img src="../../assets/images/cat.svg" class="logo">
       <div class="logo-text">HERCAT</div>
@@ -28,6 +28,36 @@
       </div>
     </div>
   </div>
+
+  <div *ngIf="terminal" class="full-container terminal-container">
+    <pre style="color: white">
+console.log> '##::::'##:'########:'########:::'######:::::'###::::'########::'######::
+console.log>  ##:::: ##: ##.....:: ##.... ##:'##... ##:::'## ##:::... ##..::'##... ##:
+console.log>  ##:::: ##: ##::::::: ##:::: ##: ##:::..:::'##:. ##::::: ##:::: ##:::..::
+console.log>  #########: ######::: ########:: ##:::::::'##:::. ##:::: ##::::. ######::
+console.log>  ##.... ##: ##...:::: ##.. ##::: ##::::::: #########:::: ##:::::..... ##:
+console.log>  ##:::: ##: ##::::::: ##::. ##:: ##::: ##: ##.... ##:::: ##::::'##::: ##:
+console.log>  ##:::: ##: ########: ##:::. ##:. ######:: ##:::: ##:::: ##::::. ######::
+console.log> ..:::::..::........::..:::::..:::......:::..:::::..:::::..::::::......:::
+console.log> :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+console.log> ::               Welcome to the world of hercats                       ::
+console.log> ::    I just want to share some idea to you. If you enjoy this site, o ::
+console.log> :: r you have any suggestions to me, please let me know.               ::
+console.log> :: This site allows you login with variety ways, such as registered ac ::
+console.log> :: counts or Github auth. If you want to use github auth, you can type ::
+console.log> :: <kbd>github</kbd> and hit <kbd>enter</kbd>. Otherwise, just follow the tips to login.   ::
+console.log> ::.....................................................................::</pre>
+    <div class="terminal-cache">
+      <span *ngFor="let cache of caches" class="cache-item">{{cache}}</span>
+    </div>
+    <div class="terminal-input">
+      <input [(ngModel)]="input" (keydown)="keyDown($event)" autofocus="autofocus" class="inputer">
+      <span class="user">{{tip}}</span>
+      <span class="content">{{input}}</span>
+      <span class="cursor animated flash infinite"></span>
+    </div>
+  </div>
+
   <div class="close-btn" (click)="back()">
     <i class="fas fa-times"></i>
   </div>
