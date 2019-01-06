@@ -22,6 +22,7 @@ import { UserinfoComponent } from './userinfo/userinfo.component';
 import { ArticleComponent } from './article/article.component';
 import { TypeComponent } from './type/type.component';
 import { AdminComponent } from './admin/admin.component';
+import { WriteArticleComponent } from './write-article/write-article.component';
 
 const route = [
   {path: 'login', component: LoginPageComponent},
@@ -31,7 +32,8 @@ const route = [
   {path: 'user', component: UserinfoComponent},
   {path: 'article', component: ArticleComponent},
   {path: 'type', component: TypeComponent},
-  {path: 'admin', component: AdminComponent}
+  {path: 'admin', component: AdminComponent},
+  {path: 'article/write', component: WriteArticleComponent}
 ];
 @NgModule({
   declarations: [
@@ -50,7 +52,8 @@ const route = [
     UserinfoComponent,
     ArticleComponent,
     TypeComponent,
-    AdminComponent
+    AdminComponent,
+    WriteArticleComponent
   ],
   imports: [
     BrowserModule,

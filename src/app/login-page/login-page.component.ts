@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {HttpService} from '../services/http.service';
 import {ToastService} from '../services/toast.service';
@@ -23,6 +23,8 @@ export class LoginPageComponent implements OnInit {
   caches = [];
   tip: string;
   shellUser = 'login $';
+  showInput = true;
+  hasFocus = true;
   constructor(
     private router: Router,
     private http: HttpService,
@@ -109,6 +111,8 @@ export class LoginPageComponent implements OnInit {
           this.caches.push(`${this.shellUser} ${this.tip}${this.input}`);
           this.caches.push(`rerouting to github, please wait...`);
           this.tip = '';
+          this.showInput = false;
+          this.loginWithGithub();
         } else if (this.user.email === '') {
           this.user.email = this.input;
           this.caches.push(`${this.shellUser} ${this.tip}${this.input}`);
@@ -118,9 +122,38 @@ export class LoginPageComponent implements OnInit {
           this.caches.push(`${this.shellUser} ${this.tip}${this.input}`);
           this.caches.push('processing, plz wait...');
           this.tip = '';
+          this.showInput = false;
+          this.terminalLogin();
         }
         this.input = '';
+      } else {
+        this.caches.push(`${this.shellUser} ${this.tip}`);
       }
     }
+  }
+
+  terminalLogin() {
+    this.http.login(this.user, {
+      onPre: () => {
+        this.caches.push('Connecting to server...');
+      },
+      onPost: ((value, err) => {
+        Nprogress.done();
+        if (value !== undefined && value.code === 200) {
+          this.caches.push('Login success, rerouting to home.');
+          this.storage.storeUser(value.data.user);
+          setTimeout(() => {
+            this.router.navigate(['/home']);
+          }, 1000);
+        } else {
+          this.caches.push(`Login failed with: ${value.info}`);
+          this.caches.push(`Please try again.`);
+          this.user.password = '';
+          this.user.email = '';
+          this.tip = 'Please input email:';
+          this.showInput = true;
+        }
+      })
+    });
   }
 }

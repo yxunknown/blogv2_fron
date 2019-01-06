@@ -1,0 +1,36 @@
+<div class="full-container scrollable no-padding">
+  <div class="container write-container">
+    <textarea type="text" #input></textarea>
+    <div class="write-bar">
+      <div class="write-item">
+        <i class="fas fa-heading"></i>
+      </div>
+    </div>
+  </div>
+  <div class="action-bar">
+    <div class="toggle-btn action-item" (click)="showActionBar()">
+      <i class="fas {{toggleIcon}}"></i>
+    </div>
+    <hr/>
+    <div #actions *ngIf="showActions" class="actions animated zoomInDown">
+      <div class="action-item">
+        <i class="fas fa-swatchbook"></i>
+      </div>
+      <div class="action-item">
+        <i class="far fa-eye"></i>
+      </div>
+      <div class="action-item">
+        <i class="fas fa-image"></i>
+      </div>
+      <div class="action-item">
+        <i class="fas fa-cookie-bite"></i>
+      </div>
+      <div class="action-item">
+        <i class="fas fa-check"></i>
+      </div>
+      <div class="action-item">
+        <i class="fas fa-times"></i>
+      </div>
+    </div>
+  </div>
+</div>

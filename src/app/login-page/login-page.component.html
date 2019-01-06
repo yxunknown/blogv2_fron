@@ -50,11 +50,12 @@
     <div class="terminal-cache">
       <span *ngFor="let cache of caches" class="cache-item">{{cache}}</span>
     </div>
-    <div class="terminal-input">
-      <input [(ngModel)]="input" (keydown)="keyDown($event)" autofocus="autofocus" class="inputer">
+    <div class="terminal-input" *ngIf="showInput">
+      <input [(ngModel)]="input" (keydown)="keyDown($event)" autofocus="autofocus"
+             (blur)="hasFocus = false;" class="inputer" (focus)="hasFocus = true;" #inputElement>
       <span class="user">{{shellUser}}</span>
-      <span class="content">{{tip}}{{input}}</span>
-      <span class="cursor animated flash infinite"></span>
+      <span class="content" (click)="inputElement.focus(); inputElement.select()">{{tip}}{{input}}</span>
+      <span class="cursor animated flash infinite" *ngIf="hasFocus"></span>
     </div>
   </div>
 
